@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Current project uses Manogo DB to store data, Node js for backend leveraging Express JS and React JS for front end.
 
-## Available Scripts
+By using this app user can manage his/her daily tasks. My main focus while developing this app is on backend and connecting backend server with the Mongo DB using mongoose.
 
-In the project directory, you can run:
+## `Front End Features`
 
-### `npm start`
+1. By clicking on add button, user can add the task by providing description in the input.
+  <img width="367" alt="image" src="https://user-images.githubusercontent.com/72153725/169648553-d4e00ba3-d59f-491f-9654-4193e6fd888d.png">
+2. once tasks are added, user can delete & update the task by clicking on icon which are present at right side for each item. 
+3. while updating the task, user will have option to make the task completed.
+  <img width="411" alt="image" src="https://user-images.githubusercontent.com/72153725/169648635-8c9fbde0-f50d-40cc-a222-0eaeaed53da7.png">
+4. If the task is completed, a task completed icon will be displayed to the left the task item, so that user users can easily identify completed tasks.
+  <img width="400" alt="image" src="https://user-images.githubusercontent.com/72153725/169648657-51f699a5-0e3d-4547-94ed-c4703694fa58.png">
+  
+### `Error Handling`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. when user tries to delete the task, while he is updating it, it will show error message in App like below.
+  <img width="394" alt="image" src="https://user-images.githubusercontent.com/72153725/169649452-1d28ea2f-ab3f-45c6-bfd0-198d740f89a6.png">
+2. when the server is down, app will show "Loading" text.
+  <img width="353" alt="image" src="https://user-images.githubusercontent.com/72153725/169649534-2dadcc96-2b74-44b1-8d25-6b343845b783.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
+## `Back End Features`
 
-### `npm test`
+1. It can return the list of all the tasks when user hits this (domain/api/v1/tasks) endpoint URL with GET request.
+   <img width="369" alt="image" src="https://user-images.githubusercontent.com/72153725/169648874-9fe6902e-7e50-4b84-a0e4-c07b98040432.png">
+2. simillarly for Creating the Task (domain/api/v1/tasks) with POST request
+   <img width="631" alt="image" src="https://user-images.githubusercontent.com/72153725/169649012-57b3ce92-5acb-45cb-844a-f43171f5237c.png">
+3. For getting the specific Task (domain/api/v1/tasks/taskId) with GET request  
+   <img width="284" alt="image" src="https://user-images.githubusercontent.com/72153725/169649111-ec474c60-32e3-41e4-ab39-306175ee9a5d.png">
+   ***Note : If the task with provided is not available then it returns below JSON***
+4. For deleting the Task (domain/api/v1/tasks/taskId) with DELETE request.
+5. For Updating the task (domain/api/v1/tasks/taskId) with PATCH request, as we are updating we also have to pass body, or else it will not update the Task.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `Error Handling`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. when user requests for the path which is not available, server will return "Route not found" text. This is handeled by the middleware in Express as mentioned below.
+  <img width="582" alt="image" src="https://user-images.githubusercontent.com/72153725/169649672-fa8af0df-456d-42bd-bb65-e304e5e6ddd7.png">
+2. server will only work when it was able to connect to the Mongo DB.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. In order for the user to create the task using API, user must provide description for it in body, as it was made mandatory in Task schema, if not it will return below message.
+  <img width="436" alt="image" src="https://user-images.githubusercontent.com/72153725/169649832-4d23805f-bc6f-4fa0-a449-aa0f5ba31de5.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  
+  
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
