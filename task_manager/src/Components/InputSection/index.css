@@ -1,0 +1,55 @@
+
+input{
+    width: 300px;
+    height: 25px;
+    border: 2px groove black;
+    border-radius: 6px;
+    padding:10px;
+}
+
+
+
+button{
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    height: 25px;
+    width: max-content;
+    border-radius: 5px;
+    margin-left: 3px;
+    border-radius: 5px;
+}
+
+button:hover{
+    border: 2px groove black;
+    cursor: pointer;
+}
+
+form>p{
+   color: darkolivegreen;
+   font-weight: 500; 
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox>label{
+    font-size: small;
+    color: black;
+    text-align: left;
+}
+form>label{
+    font-size: small;
+    color: black;
+}
+
+#completed{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}

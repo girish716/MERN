@@ -1,0 +1,43 @@
+.task-item{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 45px;
+    width: 98%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    align-items: center;
+
+}
+
+
+
+.des{
+    width: 300px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.icon{
+    padding-top: 4px;
+}
+.icon:hover{
+    cursor: pointer;
+    position: relative;
+    bottom: 2px;
+}
+
+.over{
+    margin-right: 5px;
+}
+
