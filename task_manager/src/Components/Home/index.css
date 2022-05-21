@@ -1,0 +1,45 @@
+
+.section-1{
+    background-color: white;
+    height: 150px;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-top: 2px;
+}
+
+.section-2{
+    background-color: none;
+    height: 52vh;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-top: 2px;
+    overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+    
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
