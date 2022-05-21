@@ -40,6 +40,7 @@ By using this app user can manage his/her daily tasks. My main focus while devel
 1. when user requests for the path which is not available, server will return "Route not found" text. This is handeled by the middleware in Express as mentioned below.
   <img width="582" alt="image" src="https://user-images.githubusercontent.com/72153725/169649672-fa8af0df-456d-42bd-bb65-e304e5e6ddd7.png">
 2. server will only work when it was able to connect to the Mongo DB.
+
 3. In order for the user to create the task using API, user must provide description for it in body, as it was made mandatory in Task schema, if not it will return below message.
   <img width="436" alt="image" src="https://user-images.githubusercontent.com/72153725/169649832-4d23805f-bc6f-4fa0-a449-aa0f5ba31de5.png">
 
