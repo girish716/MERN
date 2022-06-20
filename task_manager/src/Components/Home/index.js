@@ -16,7 +16,7 @@ function Home(){
     },[])
 
     const syncTasks = ()=>{
-        fetch('/api/v1/tasks')
+        fetch('https://task-manager-api.girishdama.com/api/v1/tasks')
             .then(res => res.json())  
             .then(data => {
                 let updatedTasks = data.tasks.map(task=>{
@@ -33,7 +33,7 @@ function Home(){
     }
 
     const addTask = (description)=>{
-        fetch(`/api/v1/tasks`, {
+        fetch(`https://task-manager-api.girishdama.com/api/v1/tasks`, {
             method: "POST",
             body: JSON.stringify({
                 description: description,
@@ -53,7 +53,7 @@ function Home(){
         // not allowing to del when the user is updating the item & tries to del at the same time
             return;
         }
-        fetch(`/api/v1/tasks/${id}`, {
+        fetch(`https://task-manager-api.girishdama.com/api/v1/tasks/${id}`, {
             method: "DELETE"
         })
         .then(()=>{syncTasks()})
@@ -61,7 +61,7 @@ function Home(){
     }
 
     const updateItem = (description, completed, id)=>{
-        fetch(`/api/v1/tasks/${id}`, {
+        fetch(`https://task-manager-api.girishdama.com/api/v1/tasks/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
                 description: description,
