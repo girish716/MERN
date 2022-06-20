@@ -18,10 +18,7 @@ function Home(){
     const syncTasks = ()=>{
         fetch('https://task-manager-api.girishdama.com/api/v1/tasks',
         {
-            mode: 'cors',
-            headers: {
-              'Access-Control-Allow-Origin':'https://task-manager-sepia.vercel.app/'
-            }
+            mode: 'no-cors'
           }
         )
             .then(res => res.json())  
