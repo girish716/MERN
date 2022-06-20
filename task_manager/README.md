@@ -1,6 +1,6 @@
 # Task Manager
 
-Current project uses Manogo DB to store data, Node js for backend leveraging Express JS and React JS for front end.
+Current project uses Mongo DB to store data, Node js for backend leveraging Express JS and React JS for front end.
 
 By using this app user can manage his/her daily tasks. My main focus while developing this app is on backend and connecting backend server with the Mongo DB using mongoose.
 
@@ -29,8 +29,9 @@ By using this app user can manage his/her daily tasks. My main focus while devel
 2. simillarly for Creating the Task (domain/api/v1/tasks) with POST request
    <img width="631" alt="image" src="https://user-images.githubusercontent.com/72153725/169649012-57b3ce92-5acb-45cb-844a-f43171f5237c.png">
 3. For getting the specific Task (domain/api/v1/tasks/taskId) with GET request  
+   ***Note : If the task with provided ID is not available then it returns below JSON***
+   
    <img width="284" alt="image" src="https://user-images.githubusercontent.com/72153725/169649111-ec474c60-32e3-41e4-ab39-306175ee9a5d.png">
-   ***Note : If the task with provided is not available then it returns below JSON***
 4. For deleting the Task (domain/api/v1/tasks/taskId) with DELETE request.
 5. For Updating the task (domain/api/v1/tasks/taskId) with PATCH request, as we are updating we also have to pass body, or else it will not update the Task.
 
