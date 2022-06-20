@@ -20,7 +20,7 @@ function Home(){
         {
             mode: 'cors',
             headers: {
-              'Access-Control-Allow-Origin':'*'
+              'Access-Control-Allow-Origin':'https://task-manager-sepia.vercel.app/'
             }
           }
         )
