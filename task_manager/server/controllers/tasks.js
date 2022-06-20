@@ -6,14 +6,14 @@ const {createCustomError} = require("../errors/CustomError")
 const getAllTasks = asyncWrapper(
     async (req,res)=>{
         const tasks = await Task.find({});
-        res.status(200).json({ tasks });
+        res.status(200).header("Access-Control-Allow-Origin", "*").json({ tasks });
     }
 )
 
 const createTask = asyncWrapper( 
     async (req,res)=>{
         const task = await Task.create(req.body)
-        res.status(201).json({task}); // record successfully created
+        res.status(201).header("Access-Control-Allow-Origin", "*").json({task}); // record successfully created
     }
 )
 
@@ -25,7 +25,7 @@ const getTask = asyncWrapper(
              next(createCustomError("no task with the provided ID", 404))
              return
          }
-         res.status(200).json({task});
+         res.status(200).header("Access-Control-Allow-Origin", "*").json({task});
     } 
 )
 const updateTask = asyncWrapper( 
@@ -39,7 +39,7 @@ const updateTask = asyncWrapper(
         if(!task){
             return next(createCustomError(`no task with the provided ID ${taskId}`, 404))
         } 
-        res.status(200).json({task,status:"successfully updated"});
+        res.status(200).header("Access-Control-Allow-Origin", "*").json({task,status:"successfully updated"});
     } 
 )
 const deleteTask = asyncWrapper( 
@@ -50,7 +50,7 @@ const deleteTask = asyncWrapper(
             next(createCustomError(`no task with the provided ID ${taskId}`, 404))
             return
         }
-        res.status(200).json({task});
+        res.status(200).header("Access-Control-Allow-Origin", "*").json({task});
     } 
 )
 

@@ -16,10 +16,7 @@ function Home(){
     },[])
 
     const syncTasks = ()=>{
-        fetch('https://task-manager-api.girishdama.com/api/v1/tasks',
-        {
-            mode: 'no-cors'
-          }
+        fetch('https://task-manager-api.girishdama.com/api/v1/tasks'
         )
             .then(res => res.json())  
             .then(data => {
