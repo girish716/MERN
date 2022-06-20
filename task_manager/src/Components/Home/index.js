@@ -16,7 +16,14 @@ function Home(){
     },[])
 
     const syncTasks = ()=>{
-        fetch('https://task-manager-api.girishdama.com/api/v1/tasks')
+        fetch('https://task-manager-api.girishdama.com/api/v1/tasks',
+        {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin':'*'
+            }
+          }
+        )
             .then(res => res.json())  
             .then(data => {
                 let updatedTasks = data.tasks.map(task=>{
