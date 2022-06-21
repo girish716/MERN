@@ -9,6 +9,8 @@ const app = Express();
 
 const PORT = process.env.PORT || 5000;
 
+app.options('*', cors())
+
 app.use(
     cors({
       origin: "https://task-manager.girishdama.com/",
@@ -17,15 +19,12 @@ app.use(
     })
 )
 
-app.options('*', cors())
-
-//app.options('*', cors())
 
 // whithout this middleware you will not have access to body in the responce object
 app.use(Express.json()); 
 
 // middleware for tasks route
-app.use("/api/v1/tasks",cors(), tasks);
+app.use("/api/v1/tasks", tasks);
 
 // middleware to respond custom message, when user looks for path which dosent exist 
 app.use(notFound)
