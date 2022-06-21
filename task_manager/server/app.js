@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
     cors({
-      origin: "https://task-manager.girishdama.com",
+      origin: "task-manager.girishdama.com",
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
       preflightContinue: false
     })
