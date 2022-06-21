@@ -13,7 +13,7 @@ app.options('*', cors())
 
 app.use(
     cors({
-      origin: "https://task-manager.girishdama.com/",
+      origin: "https://task-manager.girishdama.com",
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
       preflightContinue: false
     })
