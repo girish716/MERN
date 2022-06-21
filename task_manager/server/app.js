@@ -25,7 +25,7 @@ app.options('*', cors())
 app.use(Express.json()); 
 
 // middleware for tasks route
-app.use("/api/v1/tasks", tasks);
+app.use("/api/v1/tasks",cors(), tasks);
 
 // middleware to respond custom message, when user looks for path which dosent exist 
 app.use(notFound)
