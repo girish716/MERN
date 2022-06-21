@@ -9,10 +9,10 @@ const cors  = require('cors')
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin : process.env.ORIGIN
+    origin : 'https://task-manager.girishdama.com/'
 }))
 
-app.options('*', cors())
+//app.options('*', cors())
 
 // whithout this middleware you will not have access to body in the responce object
 app.use(Express.json()); 
