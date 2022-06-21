@@ -17,6 +17,8 @@ app.use(
     })
 )
 
+app.options('*', cors())
+
 //app.options('*', cors())
 
 // whithout this middleware you will not have access to body in the responce object
