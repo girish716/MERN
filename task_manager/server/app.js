@@ -5,7 +5,12 @@ const middlewareErrorHandler = require("./middlware/middlewareErrorHandler");
 const connectDB = require("./DB/connect");
 require('dotenv').config();
 const app = Express();
+const cors  = require('cors')
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({
+    origin : process.env.ORIGIN
+}))
 
 // whithout this middleware you will not have access to body in the responce object
 app.use(Express.json()); 
@@ -20,12 +25,6 @@ app.use(notFound)
 // we call next function by passing error to it
 app.use(middlewareErrorHandler)
 
-app.options("/*", function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    res.send(200);
-})
 
 const start = async ()=>{
     try{
