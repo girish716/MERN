@@ -1,16 +1,23 @@
 const Express = require("express");
+const cors  = require('cors')
 const tasks = require("./routers/tasks");
 const notFound = require("./middlware/notfound");
 const middlewareErrorHandler = require("./middlware/middlewareErrorHandler");
 const connectDB = require("./DB/connect");
 require('dotenv').config();
 const app = Express();
-const cors  = require('cors')
+
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-    origin : 'https://task-manager.girishdama.com/'
-}))
+app.use(
+    cors({
+      allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
+      exposedHeaders: ["authorization"], // you can change the headers
+      origin: "*",
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      preflightContinue: false
+    })
+)
 
 //app.options('*', cors())
 
