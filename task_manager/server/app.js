@@ -12,6 +12,8 @@ app.use(cors({
     origin : process.env.ORIGIN
 }))
 
+app.options('*', cors())
+
 // whithout this middleware you will not have access to body in the responce object
 app.use(Express.json()); 
 
