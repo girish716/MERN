@@ -9,7 +9,7 @@ const app = Express();
 
 const PORT = process.env.PORT || 5000;
 
-app.options('*', cors())
+
 
 app.use(
     cors({
