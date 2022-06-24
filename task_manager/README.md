@@ -4,6 +4,8 @@ Current project uses Mongo DB to store data, Node js for backend leveraging Expr
 
 By using this app user can manage his/her daily tasks. My main focus while developing this app is on backend and connecting backend server with the Mongo DB using mongoose.
 
+live app : [https://task-manager.girishdama.com/](https://task-manager.girishdama.com/)
+
 ## `Front End Features`
 
 1. By clicking on add button, user can add the task by providing description in the input.
