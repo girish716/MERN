@@ -16,7 +16,7 @@ function Home(){
     },[])
 
     const syncTasks = ()=>{
-        fetch(`${process.env.API_ENDPOINT}/api/v1/tasks`
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/tasks`
         )
             .then(res => res.json())  
             .then(data => {
@@ -34,7 +34,7 @@ function Home(){
     }
 
     const addTask = (description)=>{
-        fetch(`${process.env.API_ENDPOINT}/api/v1/tasks`, {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/tasks`, {
             method: "POST",
             body: JSON.stringify({
                 description: description,
@@ -54,7 +54,7 @@ function Home(){
         // not allowing to del when the user is updating the item & tries to del at the same time
             return;
         }
-        fetch(`${process.env.API_ENDPOINT}/api/v1/tasks/${id}`, {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/tasks/${id}`, {
             method: "DELETE"
         })
         .then(()=>{syncTasks()})
@@ -62,7 +62,7 @@ function Home(){
     }
 
     const updateItem = (description, completed, id)=>{
-        fetch(`${process.env.API_ENDPOINT}/api/v1/tasks/${id}`, {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/tasks/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
                 description: description,
