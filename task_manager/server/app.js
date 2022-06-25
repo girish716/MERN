@@ -7,17 +7,33 @@ const connectDB = require("./DB/connect");
 require('dotenv').config();
 const app = Express();
 
+//security pakages
+//extra security pakagaes
+const helmet = require('helmet')
+const cors = require('cors')
+const xss = require('xss-clean')
+const rateLimiter = require('express-rate-limit')
+
 const PORT = process.env.PORT || 5000;
 
 
+app.set('trust proxy', 1);
+app.use(rateLimiter(
+    {
+        windowMs : 15 * 60 *1000, // 15 minutes
+        max : 100 // limit each IP to 100 requests per windowMs
+    }
+))
+app.use(helmet()) // Helmet.js  comes with a collection of Node modules that you can use to interface to Express to increase the HTTP header security.
+app.use(cors(
+    {
+        origin: process.env.ORIGIN || '*',
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+        preflightContinue: false
+    }
+))
+app.use(xss()) //  it helps us from malicious attacks like cross site scripting by sanitizing the data in body, params, inputs 
 
-app.use(
-    cors({
-      origin: "https://task-manager.girishdama.com",
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-      preflightContinue: false
-    })
-)
 
 
 // whithout this middleware you will not have access to body in the responce object
