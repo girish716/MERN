@@ -1,0 +1,333 @@
+body, .root, .App{
+  height: 100vh;
+  width: 100%;
+}
+
+
+a{
+  text-decoration: none;
+  color: blue;
+}
+
+.error, .status{
+  font-weight: 600;
+  background-color: blanchedalmond;
+  border-radius: 5px;  
+}
+
+.status{
+  color: green;
+  background-color: orange;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.jobsImg{
+  display: none;
+  
+}
+
+.card{
+  text-align: center;
+  align-self: center;
+  border: none;
+  width: 300px;
+  padding: 1rem;
+  height: fit-content;
+  -webkit-box-shadow: 1px 1px 7px 3px rgba(0,0,0,0.42); 
+box-shadow: 1px 1px 7px 3px rgba(0,0,0,0.42);
+}
+
+form > div{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+label{
+  margin-bottom: 0.2rem;
+}
+
+input{
+  padding: 0.5rem;
+  border: 2px solid gray;
+  border-radius: 0.5rem;
+  
+}
+
+input::placeholder{
+  opacity: 0.6;
+}
+
+form select{
+  padding: 10px;
+  background-color: #edf2ff;
+  border: none;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.main-button{
+  width: 100%;
+  margin-top: 1rem;
+  height: 2.5rem;
+  background-color: lightblue;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.header{
+  background-color: lightblue;
+  position: absolute;
+  width: 100vw;
+  height: 60px;
+  color: white;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header>h3{
+  margin-left: 10px;
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.basic-button{
+  border: none;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header>button{
+  margin-right: 10px;
+  font-size: medium;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.custom{
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 2rem;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add{
+  background-color: lightblue;
+}
+
+.jobs{
+  height: 100vh;
+  padding-top: 180px;
+}
+
+
+.job p{
+  font-size: 1.2rem;
+}
+
+.position{
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.company{
+  color: gray;
+  font-weight: 500;
+  font-size: 2rem;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+p[data-color='interview']{
+  background-color: #8FBC8F;
+}
+
+p[data-color='pending']{
+  background-color: #FAEBD7;
+}
+
+p[data-color='declined']{
+  background-color: #A9A9A9;
+}
+
+.job-header{
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+}
+
+.big-letter{
+  background-color:lightblue;
+  width: 3rem;
+  height: 3.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.job-body{
+  display: flex;
+  flex-direction: column;
+}
+.job-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.job-buttons{
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
+
+.job-status{
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.job-buttons>button{
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+
+.edit-button{
+  background-color: rgb(209, 231, 221);
+}
+
+.delete-button{
+  background-color: #f8d7da ;
+}
+
+.data{
+  display: grid;
+  grid-template-columns: auto;
+  margin-top: 2rem;
+  row-gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.data>h2{
+  font-size: 2rem;
+  color: #8FBC8F;
+}
+
+
+@media all and (min-width : 480px){
+  .jobs{
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .data{
+    grid-template-columns: auto auto;
+    max-height: 80vh;
+    max-width: 60vw;
+    gap: 2rem;
+    overflow-x: hidden;
+    padding: 1rem;
+    position: relative;
+    bottom: 3rem;
+    
+    
+  }
+  .App{
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+  }
+  .job{
+    width: 250px;
+  }
+  .jobs{
+    padding-top: 110px;
+  }
+  .job p{
+    font-size: 1rem;
+  }
+
+  .register{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4%;
+  }
+  
+  .jobsImg{
+    display: block;
+    height: 100vh;
+    width: 70%;
+    
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
