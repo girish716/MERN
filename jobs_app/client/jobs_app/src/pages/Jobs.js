@@ -135,7 +135,7 @@ const Jobs = () => {
           </div>
           <div>
             <label htmlFor='status'>Status</label>
-            <select name="status" id="status" onChange={onChange}>
+            <select name="status" id="status" onChange={onChange} value={job.status}>
               <option value="interview">Interview</option>
               <option value="declined">Declined</option>
               <option value="pending">Pending</option>
