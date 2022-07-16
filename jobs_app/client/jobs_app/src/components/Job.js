@@ -3,7 +3,7 @@ import React from 'react'
 const Job = (props) => {
   const { position, company, status, deleteJob, id, setUpdateId, setIsUpdateScreen, setJob} = props
   const date = new Date()
-  const currentDate = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear()
+  const currentDate = date.getDate()+"/"+(Number(date.getMonth())+1)+"/"+date.getFullYear()
 
   return (
     <div className='card job'>

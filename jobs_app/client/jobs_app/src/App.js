@@ -2,7 +2,6 @@ import './App.css';
 import Jobs from './pages/Jobs';
 import { Routes, Route, Navigate} from 'react-router-dom'
 import Register from './pages/Register';
-import Job from './components/Job';
 
 function App() {
   const token = localStorage.getItem('token')
